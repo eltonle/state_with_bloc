@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:state_with_bloc/view/items/items_view.dart';
+import 'package:state_with_bloc/view/orthers/gallery_view.dart';
+import 'package:state_with_bloc/view/orthers/mene_view.dart';
+import 'package:state_with_bloc/view/orthers/photo_view.dart';
 import 'package:state_with_bloc/view/user/user_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -70,6 +73,77 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 child: const Text(
                   "Users List",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const GalleryView(),
+                    ),
+                  );
+                },
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.teal,
+                  shadowColor: Colors.black,
+                ),
+                child: const Text(
+                  "Galllery List",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Photoview(),
+                    ),
+                  );
+                },
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.teal,
+                  shadowColor: Colors.black,
+                ),
+                child: const Text(
+                  "Photo List",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MemeView(),
+                    ),
+                  );
+                },
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.teal,
+                  shadowColor: Colors.black,
+                ),
+                child: const Text(
+                  "Service Locator List",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                   ),
