@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:state_with_bloc/view/api/home_api.dart';
 import 'package:state_with_bloc/view/items/items_view.dart';
 import 'package:state_with_bloc/view/orthers/gallery_view.dart';
 import 'package:state_with_bloc/view/orthers/mene_view.dart';
 import 'package:state_with_bloc/view/orthers/photo_view.dart';
 import 'package:state_with_bloc/view/user/user_view.dart';
+
+import '../orthers/top_user.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -26,7 +29,7 @@ class _HomeViewState extends State<HomeView> {
         centerTitle: true,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -151,6 +154,50 @@ class _HomeViewState extends State<HomeView> {
               ),
             ],
           ),
+          Row(
+            children: [
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.teal,
+                  shadowColor: Colors.black,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => const HomeApi(),
+                      ));
+                },
+                child: const Text(
+                  'Api view',
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.teal,
+                  shadowColor: Colors.black,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => TopUser(),
+                      ));
+                },
+                child: const Text(
+                  'Top users',
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
